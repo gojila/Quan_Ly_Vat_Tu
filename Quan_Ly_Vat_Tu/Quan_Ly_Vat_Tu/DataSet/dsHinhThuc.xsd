@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsHinhThuc" targetNamespace="http://tempuri.org/dsHinhThuc.xsd" xmlns:mstns="http://tempuri.org/dsHinhThuc.xsd" xmlns="http://tempuri.org/dsHinhThuc.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsHinhThuc" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsHinhThuc" msprop:Generator_UserDSName="dsHinhThuc">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Hinh_Thuc_Thu_Chi" msprop:Generator_TableClassName="Hinh_Thuc_Thu_ChiDataTable" msprop:Generator_TableVarName="tableHinh_Thuc_Thu_Chi" msprop:Generator_RowChangedName="Hinh_Thuc_Thu_ChiRowChanged" msprop:Generator_TablePropName="Hinh_Thuc_Thu_Chi" msprop:Generator_RowDeletingName="Hinh_Thuc_Thu_ChiRowDeleting" msprop:Generator_RowChangingName="Hinh_Thuc_Thu_ChiRowChanging" msprop:Generator_RowEvHandlerName="Hinh_Thuc_Thu_ChiRowChangeEventHandler" msprop:Generator_RowDeletedName="Hinh_Thuc_Thu_ChiRowDeleted" msprop:Generator_RowClassName="Hinh_Thuc_Thu_ChiRow" msprop:Generator_UserTableName="Hinh_Thuc_Thu_Chi" msprop:Generator_RowEvArgName="Hinh_Thuc_Thu_ChiRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ma" msprop:Generator_ColumnVarNameInTable="columnMa" msprop:Generator_ColumnPropNameInRow="Ma" msprop:Generator_ColumnPropNameInTable="MaColumn" msprop:Generator_UserColumnName="Ma" type="xs:string" minOccurs="0" />
+              <xs:element name="Ten" msprop:Generator_ColumnVarNameInTable="columnTen" msprop:Generator_ColumnPropNameInRow="Ten" msprop:Generator_ColumnPropNameInTable="TenColumn" msprop:Generator_UserColumnName="Ten" type="xs:string" minOccurs="0" />
+              <xs:element name="GhiChu" msprop:Generator_ColumnVarNameInTable="columnGhiChu" msprop:Generator_ColumnPropNameInRow="GhiChu" msprop:Generator_ColumnPropNameInTable="GhiChuColumn" msprop:Generator_UserColumnName="GhiChu" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Hinh_Thuc_Thanh_Toan" msprop:Generator_TableClassName="Hinh_Thuc_Thanh_ToanDataTable" msprop:Generator_TableVarName="tableHinh_Thuc_Thanh_Toan" msprop:Generator_RowChangedName="Hinh_Thuc_Thanh_ToanRowChanged" msprop:Generator_TablePropName="Hinh_Thuc_Thanh_Toan" msprop:Generator_RowDeletingName="Hinh_Thuc_Thanh_ToanRowDeleting" msprop:Generator_RowChangingName="Hinh_Thuc_Thanh_ToanRowChanging" msprop:Generator_RowEvHandlerName="Hinh_Thuc_Thanh_ToanRowChangeEventHandler" msprop:Generator_RowDeletedName="Hinh_Thuc_Thanh_ToanRowDeleted" msprop:Generator_RowClassName="Hinh_Thuc_Thanh_ToanRow" msprop:Generator_UserTableName="Hinh_Thuc_Thanh_Toan" msprop:Generator_RowEvArgName="Hinh_Thuc_Thanh_ToanRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ma" msprop:Generator_ColumnVarNameInTable="columnMa" msprop:Generator_ColumnPropNameInRow="Ma" msprop:Generator_ColumnPropNameInTable="MaColumn" msprop:Generator_UserColumnName="Ma" type="xs:string" minOccurs="0" />
+              <xs:element name="Ten" msprop:Generator_ColumnVarNameInTable="columnTen" msprop:Generator_ColumnPropNameInRow="Ten" msprop:Generator_ColumnPropNameInTable="TenColumn" msprop:Generator_UserColumnName="Ten" type="xs:string" minOccurs="0" />
+              <xs:element name="GhiChu" msprop:Generator_ColumnVarNameInTable="columnGhiChu" msprop:Generator_ColumnPropNameInRow="GhiChu" msprop:Generator_ColumnPropNameInTable="GhiChuColumn" msprop:Generator_UserColumnName="GhiChu" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Hinh_Thuc_Cong_No" msprop:Generator_TableClassName="Hinh_Thuc_Cong_NoDataTable" msprop:Generator_TableVarName="tableHinh_Thuc_Cong_No" msprop:Generator_TablePropName="Hinh_Thuc_Cong_No" msprop:Generator_RowDeletingName="Hinh_Thuc_Cong_NoRowDeleting" msprop:Generator_RowChangingName="Hinh_Thuc_Cong_NoRowChanging" msprop:Generator_RowEvHandlerName="Hinh_Thuc_Cong_NoRowChangeEventHandler" msprop:Generator_RowDeletedName="Hinh_Thuc_Cong_NoRowDeleted" msprop:Generator_UserTableName="Hinh_Thuc_Cong_No" msprop:Generator_RowChangedName="Hinh_Thuc_Cong_NoRowChanged" msprop:Generator_RowEvArgName="Hinh_Thuc_Cong_NoRowChangeEvent" msprop:Generator_RowClassName="Hinh_Thuc_Cong_NoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ma" msprop:Generator_ColumnVarNameInTable="columnMa" msprop:Generator_ColumnPropNameInRow="Ma" msprop:Generator_ColumnPropNameInTable="MaColumn" msprop:Generator_UserColumnName="Ma" type="xs:string" minOccurs="0" />
+              <xs:element name="Ten" msprop:Generator_ColumnVarNameInTable="columnTen" msprop:Generator_ColumnPropNameInRow="Ten" msprop:Generator_ColumnPropNameInTable="TenColumn" msprop:Generator_UserColumnName="Ten" type="xs:string" minOccurs="0" />
+              <xs:element name="Ghi_Chu" msprop:Generator_ColumnVarNameInTable="columnGhi_Chu" msprop:Generator_ColumnPropNameInRow="Ghi_Chu" msprop:Generator_ColumnPropNameInTable="Ghi_ChuColumn" msprop:Generator_UserColumnName="Ghi_Chu" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Loai_Chung_Tu" msprop:Generator_TableClassName="Loai_Chung_TuDataTable" msprop:Generator_TableVarName="tableLoai_Chung_Tu" msprop:Generator_TablePropName="Loai_Chung_Tu" msprop:Generator_RowDeletingName="Loai_Chung_TuRowDeleting" msprop:Generator_RowChangingName="Loai_Chung_TuRowChanging" msprop:Generator_RowEvHandlerName="Loai_Chung_TuRowChangeEventHandler" msprop:Generator_RowDeletedName="Loai_Chung_TuRowDeleted" msprop:Generator_UserTableName="Loai_Chung_Tu" msprop:Generator_RowChangedName="Loai_Chung_TuRowChanged" msprop:Generator_RowEvArgName="Loai_Chung_TuRowChangeEvent" msprop:Generator_RowClassName="Loai_Chung_TuRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ma" msprop:Generator_ColumnVarNameInTable="columnMa" msprop:Generator_ColumnPropNameInRow="Ma" msprop:Generator_ColumnPropNameInTable="MaColumn" msprop:Generator_UserColumnName="Ma" type="xs:string" minOccurs="0" />
+              <xs:element name="Ten" msprop:Generator_ColumnVarNameInTable="columnTen" msprop:Generator_ColumnPropNameInRow="Ten" msprop:Generator_ColumnPropNameInTable="TenColumn" msprop:Generator_UserColumnName="Ten" type="xs:string" minOccurs="0" />
+              <xs:element name="Ghi_Chu" msprop:Generator_ColumnVarNameInTable="columnGhi_Chu" msprop:Generator_ColumnPropNameInRow="Ghi_Chu" msprop:Generator_ColumnPropNameInTable="Ghi_ChuColumn" msprop:Generator_UserColumnName="Ghi_Chu" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

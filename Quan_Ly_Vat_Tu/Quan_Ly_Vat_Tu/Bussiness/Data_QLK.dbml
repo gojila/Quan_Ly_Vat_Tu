@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Quan_Ly_Vat_Tu" Class="Data_QLKDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local);Initial Catalog=Quan_Ly_Vat_Tu;Persist Security Info=True;User ID=sa" SettingsObjectName="Quan_Ly_Vat_Tu.Properties.Settings" SettingsPropertyName="Quan_Ly_Vat_TuConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CUA_HANG" Member="CUA_HANGs">
+    <Type Name="CUA_HANG">
+      <Column Name="Ma_Cua_Hang" Type="System.String" DbType="VarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten_Cua_Hang" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Dia_Chi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Ma_So_Thue" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Dien_Thoai" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Di_Dong" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Quan_Ly" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Ghi_Chu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Anh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHO_HANG" Member="KHO_HANGs">
+    <Type Name="KHO_HANG">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma_Kho" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ten_Kho" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Dia_Chi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Dien_Thoai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Di_Dong" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Thu_Kho" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ghi_Chu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHU_VUC" Member="KHU_VUCs">
+    <Type Name="KHU_VUC">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma_Khu_Vuc" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Ten_Khu_Vuc" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ghi_Chu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THU_CHI" Member="THU_CHIs">
+    <Type Name="THU_CHI">
+      <Column Name="Ma_Chung_Tu" Type="System.String" DbType="VarChar(250) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Ma_Khach_Hang" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Ten_Khach_Hang" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Dia_Chi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="So_Tien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Ly_Do" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Chung_Tu_Ban_Hang" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Loai_Chung_Tu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hinh_Thuc_Cong_No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hinh_Thuc_Thanh_Toan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ghi_Chu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHUNG_TU_CHI_TIET" Member="CHUNG_TU_CHI_TIETs">
+    <Type Name="CHUNG_TU_CHI_TIET">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Chung_Tu_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Hang_Hoa_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Ma_Hang_Hoa" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Ten_Hang_Hoa" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Loai_Chung_Tu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tinh_Trang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Chi_Nhanh_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Ma_Chi_Nhanh" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Kho_Hang_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Ma_Kho_Hang" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Lo_Vat_Tu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Serial_No" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Don_Vi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="So_Luong" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Don_Gia" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Thanh_Tien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Nhan_Vien_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Khach_Hang_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Ghi_Chu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="So_Thu_Tu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeletetedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHAN_VIEN" Member="NHAN_VIENs">
+    <Type Name="NHAN_VIEN">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma_Nhan_Vien" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Ho_Ten" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Dia_Chi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Nam_Sinh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Dien_Thoai" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Ngay_Vao_Lam" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Chuc_Vu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Bo_Phan" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Cua_Hang" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Ghi_Chu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TON_KHO" Member="TON_KHOs">
+    <Type Name="TON_KHO">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Vat_Tu_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Ma_Vat_Tu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Ten_Vat_Tu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Chi_Nhanh_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Kho_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Lo_Vat_Tu" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Serial_No" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="So_Luong" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACH_HANG" Member="KHACH_HANGs">
+    <Type Name="KHACH_HANG">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma_Khach_Hang" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten_Khach_Hang" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Khu_Vuc_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Dia_Chi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ma_So_Thue" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Dien_Thoai" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Di_Dong" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Nguoi_Lien_He" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NickYM" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="NickSky" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Tai_Khoan_Ngan_Hang" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Ten_Ngan_Hang" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Ghi_Chu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHOM_HANG" Member="NHOM_HANGs">
+    <Type Name="NHOM_HANG">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma_Nhom_Hang" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten_Nhom_Hang" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ghi_Chu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HANG_HOA" Member="HANG_HOAs">
+    <Type Name="HANG_HOA">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma_Hang" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Ten_Hang" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Nhom_Hang_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Don_Vi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Gia_Nhap" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Gia_Xuat" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Anh" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Ghi_Chu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CHUNG_TU" Member="CHUNG_TUs">
+    <Type Name="CHUNG_TU">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma_Chung_Tu" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Ma_Hoa_Don" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Nhan_Vien" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Loai_Chung_Tu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ma_Khach_Hang" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Dia_Chi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Ly_Do" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="VAT_Phan_Tram" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="VAT_Thanh_Tien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Chiet_Khau_Phan_Tram" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Chiet_Khau_Thanh_Tien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Thanh_Tien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Hinh_Thuc_Thu_Chi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hinh_Thuc_Cong_No" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thanh_Toan" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Ghi_Chu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="So_Thu_Tu" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Dau_Ky" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeletedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeletedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

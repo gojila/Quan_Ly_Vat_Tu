@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Quan_Ly_Vat_TuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Quan_Ly_Vat_TuEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHUNG_TU" EntityType="Quan_Ly_Vat_TuModel.CHUNG_TU" />
+    <EntitySet Name="CHUNG_TU_CHI_TIET" EntityType="Quan_Ly_Vat_TuModel.CHUNG_TU_CHI_TIET" />
+    <EntitySet Name="CUA_HANG" EntityType="Quan_Ly_Vat_TuModel.CUA_HANG" />
+    <EntitySet Name="HANG_HOA" EntityType="Quan_Ly_Vat_TuModel.HANG_HOA" />
+    <EntitySet Name="KHACH_HANG" EntityType="Quan_Ly_Vat_TuModel.KHACH_HANG" />
+    <EntitySet Name="KHO_HANG" EntityType="Quan_Ly_Vat_TuModel.KHO_HANG" />
+    <EntitySet Name="KHU_VUC" EntityType="Quan_Ly_Vat_TuModel.KHU_VUC" />
+    <EntitySet Name="NHAN_VIEN" EntityType="Quan_Ly_Vat_TuModel.NHAN_VIEN" />
+    <EntitySet Name="NHOM_HANG" EntityType="Quan_Ly_Vat_TuModel.NHOM_HANG" />
+    <EntitySet Name="THU_CHI" EntityType="Quan_Ly_Vat_TuModel.THU_CHI" />
+    <AssociationSet Name="FK_CHUNG_TU_CHI_TIET_CHUNG_TU" Association="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_CHUNG_TU">
+      <End Role="CHUNG_TU" EntitySet="CHUNG_TU" />
+      <End Role="CHUNG_TU_CHI_TIET" EntitySet="CHUNG_TU_CHI_TIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUNG_TU_KHACH_HANG" Association="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_KHACH_HANG">
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+      <End Role="CHUNG_TU" EntitySet="CHUNG_TU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUNG_TU_CHI_TIET_HANG_HOA" Association="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_HANG_HOA">
+      <End Role="HANG_HOA" EntitySet="HANG_HOA" />
+      <End Role="CHUNG_TU_CHI_TIET" EntitySet="CHUNG_TU_CHI_TIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUNG_TU_CHI_TIET_KHO_HANG" Association="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_KHO_HANG">
+      <End Role="KHO_HANG" EntitySet="KHO_HANG" />
+      <End Role="CHUNG_TU_CHI_TIET" EntitySet="CHUNG_TU_CHI_TIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HANG_HOA_NHOM_HANG" Association="Quan_Ly_Vat_TuModel.FK_HANG_HOA_NHOM_HANG">
+      <End Role="NHOM_HANG" EntitySet="NHOM_HANG" />
+      <End Role="HANG_HOA" EntitySet="HANG_HOA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACH_HANG_KHU_VUC" Association="Quan_Ly_Vat_TuModel.FK_KHACH_HANG_KHU_VUC">
+      <End Role="KHU_VUC" EntitySet="KHU_VUC" />
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CHUNG_TU">
+    <Key>
+      <PropertyRef Name="Ma_Chung_Tu" />
+    </Key>
+    <Property Name="Ma_Chung_Tu" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Ngay" Type="DateTime" Precision="3" />
+    <Property Name="Ma_Hoa_Don" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Nhan_Vien" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Loai_Chung_Tu" Type="Int32" />
+    <Property Name="Dia_Chi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Ly_Do" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="VAT_Phan_Tram" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="VAT_Thanh_Tien" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Chiet_Khau_Phan_Tram" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Chiet_Khau_Thanh_Tien" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Thanh_Tien" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Hinh_Thuc_Thu_Chi" Type="Int32" />
+    <Property Name="Hinh_Thuc_Cong_No" Type="Int32" />
+    <Property Name="Thanh_Toan" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ghi_Chu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="So_Thu_Tu" Type="Int64" />
+    <NavigationProperty Name="CHUNG_TU_CHI_TIET" Relationship="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_CHUNG_TU" FromRole="CHUNG_TU" ToRole="CHUNG_TU_CHI_TIET" />
+    <NavigationProperty Name="KHACH_HANG" Relationship="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_KHACH_HANG" FromRole="CHUNG_TU" ToRole="KHACH_HANG" />
+  </EntityType>
+  <EntityType Name="CHUNG_TU_CHI_TIET">
+    <Key>
+      <PropertyRef Name="Ma_Chi_Tiet" />
+    </Key>
+    <Property Name="Ma_Chi_Tiet" Type="Guid" Nullable="false" />
+    <Property Name="Loai_Chung_Tu" Type="Int32" />
+    <Property Name="Tinh_Trang" Type="Boolean" />
+    <Property Name="So_Luong" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Don_Gia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Thanh_Tien" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ghi_Chu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="So_Thu_Tu" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="CHUNG_TU" Relationship="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_CHUNG_TU" FromRole="CHUNG_TU_CHI_TIET" ToRole="CHUNG_TU" />
+    <NavigationProperty Name="HANG_HOA" Relationship="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_HANG_HOA" FromRole="CHUNG_TU_CHI_TIET" ToRole="HANG_HOA" />
+    <NavigationProperty Name="KHO_HANG" Relationship="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_KHO_HANG" FromRole="CHUNG_TU_CHI_TIET" ToRole="KHO_HANG" />
+  </EntityType>
+  <EntityType Name="CUA_HANG">
+    <Key>
+      <PropertyRef Name="Ma_Cua_Hang" />
+    </Key>
+    <Property Name="Ma_Cua_Hang" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Ten_Cua_Hang" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Dia_Chi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Ma_So_Thue" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Dien_Thoai" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Di_Dong" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Quan_Ly" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Ghi_Chu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Anh" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="HANG_HOA">
+    <Key>
+      <PropertyRef Name="Ma_Hang" />
+    </Key>
+    <Property Name="Ma_Hang" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Ten_Hang" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Don_Vi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Gia_Nhap" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Gia_Xuat" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Anh" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Ghi_Chu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CHUNG_TU_CHI_TIET" Relationship="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_HANG_HOA" FromRole="HANG_HOA" ToRole="CHUNG_TU_CHI_TIET" />
+    <NavigationProperty Name="NHOM_HANG" Relationship="Quan_Ly_Vat_TuModel.FK_HANG_HOA_NHOM_HANG" FromRole="HANG_HOA" ToRole="NHOM_HANG" />
+  </EntityType>
+  <EntityType Name="KHACH_HANG">
+    <Key>
+      <PropertyRef Name="Ma_Khach_Hang" />
+    </Key>
+    <Property Name="Ma_Khach_Hang" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Ten_Khach_Hang" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dia_Chi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Ma_So_Thue" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Dien_Thoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Di_Dong" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Nguoi_Lien_He" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NickYM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NickSky" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Tai_Khoan_Ngan_Hang" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Ten_Ngan_Hang" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Ghi_Chu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CHUNG_TU" Relationship="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_KHACH_HANG" FromRole="KHACH_HANG" ToRole="CHUNG_TU" />
+    <NavigationProperty Name="KHU_VUC" Relationship="Quan_Ly_Vat_TuModel.FK_KHACH_HANG_KHU_VUC" FromRole="KHACH_HANG" ToRole="KHU_VUC" />
+  </EntityType>
+  <EntityType Name="KHO_HANG">
+    <Key>
+      <PropertyRef Name="Ma_Kho" />
+    </Key>
+    <Property Name="Ma_Kho" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Ten_Kho" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Dia_Chi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dien_Thoai" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Di_Dong" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Thu_Kho" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Ghi_Chu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CHUNG_TU_CHI_TIET" Relationship="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_KHO_HANG" FromRole="KHO_HANG" ToRole="CHUNG_TU_CHI_TIET" />
+  </EntityType>
+  <EntityType Name="KHU_VUC">
+    <Key>
+      <PropertyRef Name="Ma_Khu_Vuc" />
+    </Key>
+    <Property Name="Ma_Khu_Vuc" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Ten_Khu_Vuc" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Ghi_Chu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KHACH_HANG" Relationship="Quan_Ly_Vat_TuModel.FK_KHACH_HANG_KHU_VUC" FromRole="KHU_VUC" ToRole="KHACH_HANG" />
+  </EntityType>
+  <EntityType Name="NHAN_VIEN">
+    <Key>
+      <PropertyRef Name="Ma_Nhan_Vien" />
+    </Key>
+    <Property Name="Ma_Nhan_Vien" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Ho_Ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Dia_Chi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Nam_Sinh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Dien_Thoai" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Ngay_Vao_Lam" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Chuc_Vu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Bo_Phan" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Cua_Hang" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Ghi_Chu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NHOM_HANG">
+    <Key>
+      <PropertyRef Name="Ma_Nhom_Hang" />
+    </Key>
+    <Property Name="Ma_Nhom_Hang" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Ten_Nhom_Hang" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Ghi_Chu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HANG_HOA" Relationship="Quan_Ly_Vat_TuModel.FK_HANG_HOA_NHOM_HANG" FromRole="NHOM_HANG" ToRole="HANG_HOA" />
+  </EntityType>
+  <EntityType Name="THU_CHI">
+    <Key>
+      <PropertyRef Name="Ma_Chung_Tu" />
+    </Key>
+    <Property Name="Ma_Chung_Tu" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Ngay" Type="DateTime" Precision="3" />
+    <Property Name="Ma_Khach_Hang" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Ten_Khach_Hang" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Dia_Chi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="So_Tien" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Ly_Do" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Chung_Tu_Ban_Hang" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Loai_Chung_Tu" Type="Int32" />
+    <Property Name="Hinh_Thuc_Cong_No" Type="Int32" />
+    <Property Name="Hinh_Thuc_Thanh_Toan" Type="Int32" />
+    <Property Name="Ghi_Chu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_CHUNG_TU_CHI_TIET_CHUNG_TU">
+    <End Type="Quan_Ly_Vat_TuModel.CHUNG_TU" Role="CHUNG_TU" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Quan_Ly_Vat_TuModel.CHUNG_TU_CHI_TIET" Role="CHUNG_TU_CHI_TIET" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_CHUNG_TU_KHACH_HANG">
+    <End Type="Quan_Ly_Vat_TuModel.KHACH_HANG" Role="KHACH_HANG" Multiplicity="0..1" />
+    <End Type="Quan_Ly_Vat_TuModel.CHUNG_TU" Role="CHUNG_TU" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_CHUNG_TU_CHI_TIET_HANG_HOA">
+    <End Type="Quan_Ly_Vat_TuModel.HANG_HOA" Role="HANG_HOA" Multiplicity="1" />
+    <End Type="Quan_Ly_Vat_TuModel.CHUNG_TU_CHI_TIET" Role="CHUNG_TU_CHI_TIET" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_CHUNG_TU_CHI_TIET_KHO_HANG">
+    <End Type="Quan_Ly_Vat_TuModel.KHO_HANG" Role="KHO_HANG" Multiplicity="0..1" />
+    <End Type="Quan_Ly_Vat_TuModel.CHUNG_TU_CHI_TIET" Role="CHUNG_TU_CHI_TIET" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_HANG_HOA_NHOM_HANG">
+    <End Type="Quan_Ly_Vat_TuModel.NHOM_HANG" Role="NHOM_HANG" Multiplicity="0..1" />
+    <End Type="Quan_Ly_Vat_TuModel.HANG_HOA" Role="HANG_HOA" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_KHACH_HANG_KHU_VUC">
+    <End Type="Quan_Ly_Vat_TuModel.KHU_VUC" Role="KHU_VUC" Multiplicity="1" />
+    <End Type="Quan_Ly_Vat_TuModel.KHACH_HANG" Role="KHACH_HANG" Multiplicity="*" />
+  </Association>
+</Schema>

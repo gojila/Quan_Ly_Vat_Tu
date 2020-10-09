@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Quan_Ly_Vat_TuModelStoreContainer" CdmEntityContainer="Quan_Ly_Vat_TuEntities">
+    <EntitySetMapping Name="CHUNG_TU">
+      <EntityTypeMapping TypeName="Quan_Ly_Vat_TuModel.CHUNG_TU">
+        <MappingFragment StoreEntitySet="CHUNG_TU">
+          <ScalarProperty Name="So_Thu_Tu" ColumnName="So_Thu_Tu" />
+          <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+          <ScalarProperty Name="Thanh_Toan" ColumnName="Thanh_Toan" />
+          <ScalarProperty Name="Hinh_Thuc_Cong_No" ColumnName="Hinh_Thuc_Cong_No" />
+          <ScalarProperty Name="Hinh_Thuc_Thu_Chi" ColumnName="Hinh_Thuc_Thu_Chi" />
+          <ScalarProperty Name="Thanh_Tien" ColumnName="Thanh_Tien" />
+          <ScalarProperty Name="Chiet_Khau_Thanh_Tien" ColumnName="Chiet_Khau_Thanh_Tien" />
+          <ScalarProperty Name="Chiet_Khau_Phan_Tram" ColumnName="Chiet_Khau_Phan_Tram" />
+          <ScalarProperty Name="VAT_Thanh_Tien" ColumnName="VAT_Thanh_Tien" />
+          <ScalarProperty Name="VAT_Phan_Tram" ColumnName="VAT_Phan_Tram" />
+          <ScalarProperty Name="Ly_Do" ColumnName="Ly_Do" />
+          <ScalarProperty Name="Dia_Chi" ColumnName="Dia_Chi" />
+          <ScalarProperty Name="Loai_Chung_Tu" ColumnName="Loai_Chung_Tu" />
+          <ScalarProperty Name="Nhan_Vien" ColumnName="Nhan_Vien" />
+          <ScalarProperty Name="Ma_Hoa_Don" ColumnName="Ma_Hoa_Don" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="Ma_Chung_Tu" ColumnName="Ma_Chung_Tu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHUNG_TU_CHI_TIET">
+      <EntityTypeMapping TypeName="Quan_Ly_Vat_TuModel.CHUNG_TU_CHI_TIET">
+        <MappingFragment StoreEntitySet="CHUNG_TU_CHI_TIET">
+          <ScalarProperty Name="So_Thu_Tu" ColumnName="So_Thu_Tu" />
+          <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+          <ScalarProperty Name="Thanh_Tien" ColumnName="Thanh_Tien" />
+          <ScalarProperty Name="Don_Gia" ColumnName="Don_Gia" />
+          <ScalarProperty Name="So_Luong" ColumnName="So_Luong" />
+          <ScalarProperty Name="Tinh_Trang" ColumnName="Tinh_Trang" />
+          <ScalarProperty Name="Loai_Chung_Tu" ColumnName="Loai_Chung_Tu" />
+          <ScalarProperty Name="Ma_Chi_Tiet" ColumnName="Ma_Chi_Tiet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUA_HANG">
+      <EntityTypeMapping TypeName="Quan_Ly_Vat_TuModel.CUA_HANG">
+        <MappingFragment StoreEntitySet="CUA_HANG">
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+          <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+          <ScalarProperty Name="Quan_Ly" ColumnName="Quan_Ly" />
+          <ScalarProperty Name="Di_Dong" ColumnName="Di_Dong" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Dien_Thoai" ColumnName="Dien_Thoai" />
+          <ScalarProperty Name="Ma_So_Thue" ColumnName="Ma_So_Thue" />
+          <ScalarProperty Name="Dia_Chi" ColumnName="Dia_Chi" />
+          <ScalarProperty Name="Ten_Cua_Hang" ColumnName="Ten_Cua_Hang" />
+          <ScalarProperty Name="Ma_Cua_Hang" ColumnName="Ma_Cua_Hang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HANG_HOA">
+      <EntityTypeMapping TypeName="Quan_Ly_Vat_TuModel.HANG_HOA">
+        <MappingFragment StoreEntitySet="HANG_HOA">
+          <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+          <ScalarProperty Name="Anh" ColumnName="Anh" />
+          <ScalarProperty Name="Gia_Xuat" ColumnName="Gia_Xuat" />
+          <ScalarProperty Name="Gia_Nhap" ColumnName="Gia_Nhap" />
+          <ScalarProperty Name="Don_Vi" ColumnName="Don_Vi" />
+          <ScalarProperty Name="Ten_Hang" ColumnName="Ten_Hang" />
+          <ScalarProperty Name="Ma_Hang" ColumnName="Ma_Hang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACH_HANG">
+      <EntityTypeMapping TypeName="Quan_Ly_Vat_TuModel.KHACH_HANG">
+        <MappingFragment StoreEntitySet="KHACH_HANG">
+          <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+          <ScalarProperty Name="Ten_Ngan_Hang" ColumnName="Ten_Ngan_Hang" />
+          <ScalarProperty Name="Tai_Khoan_Ngan_Hang" ColumnName="Tai_Khoan_Ngan_Hang" />
+          <ScalarProperty Name="NickSky" ColumnName="NickSky" />
+          <ScalarProperty Name="NickYM" ColumnName="NickYM" />
+          <ScalarProperty Name="Nguoi_Lien_He" ColumnName="Nguoi_Lien_He" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Di_Dong" ColumnName="Di_Dong" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Dien_Thoai" ColumnName="Dien_Thoai" />
+          <ScalarProperty Name="Ma_So_Thue" ColumnName="Ma_So_Thue" />
+          <ScalarProperty Name="Dia_Chi" ColumnName="Dia_Chi" />
+          <ScalarProperty Name="Ten_Khach_Hang" ColumnName="Ten_Khach_Hang" />
+          <ScalarProperty Name="Ma_Khach_Hang" ColumnName="Ma_Khach_Hang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHO_HANG">
+      <EntityTypeMapping TypeName="Quan_Ly_Vat_TuModel.KHO_HANG">
+        <MappingFragment StoreEntitySet="KHO_HANG">
+          <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+          <ScalarProperty Name="Thu_Kho" ColumnName="Thu_Kho" />
+          <ScalarProperty Name="Di_Dong" ColumnName="Di_Dong" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Dien_Thoai" ColumnName="Dien_Thoai" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Dia_Chi" ColumnName="Dia_Chi" />
+          <ScalarProperty Name="Ten_Kho" ColumnName="Ten_Kho" />
+          <ScalarProperty Name="Ma_Kho" ColumnName="Ma_Kho" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHU_VUC">
+      <EntityTypeMapping TypeName="Quan_Ly_Vat_TuModel.KHU_VUC">
+        <MappingFragment StoreEntitySet="KHU_VUC">
+          <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+          <ScalarProperty Name="Ten_Khu_Vuc" ColumnName="Ten_Khu_Vuc" />
+          <ScalarProperty Name="Ma_Khu_Vuc" ColumnName="Ma_Khu_Vuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHAN_VIEN">
+      <EntityTypeMapping TypeName="Quan_Ly_Vat_TuModel.NHAN_VIEN">
+        <MappingFragment StoreEntitySet="NHAN_VIEN">
+          <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+          <ScalarProperty Name="Cua_Hang" ColumnName="Cua_Hang" />
+          <ScalarProperty Name="Bo_Phan" ColumnName="Bo_Phan" />
+          <ScalarProperty Name="Chuc_Vu" ColumnName="Chuc_Vu" />
+          <ScalarProperty Name="Ngay_Vao_Lam" ColumnName="Ngay_Vao_Lam" />
+          <ScalarProperty Name="Dien_Thoai" ColumnName="Dien_Thoai" />
+          <ScalarProperty Name="Nam_Sinh" ColumnName="Nam_Sinh" />
+          <ScalarProperty Name="Dia_Chi" ColumnName="Dia_Chi" />
+          <ScalarProperty Name="Ho_Ten" ColumnName="Ho_Ten" />
+          <ScalarProperty Name="Ma_Nhan_Vien" ColumnName="Ma_Nhan_Vien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHOM_HANG">
+      <EntityTypeMapping TypeName="Quan_Ly_Vat_TuModel.NHOM_HANG">
+        <MappingFragment StoreEntitySet="NHOM_HANG">
+          <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+          <ScalarProperty Name="Ten_Nhom_Hang" ColumnName="Ten_Nhom_Hang" />
+          <ScalarProperty Name="Ma_Nhom_Hang" ColumnName="Ma_Nhom_Hang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THU_CHI">
+      <EntityTypeMapping TypeName="Quan_Ly_Vat_TuModel.THU_CHI">
+        <MappingFragment StoreEntitySet="THU_CHI">
+          <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+          <ScalarProperty Name="Hinh_Thuc_Thanh_Toan" ColumnName="Hinh_Thuc_Thanh_Toan" />
+          <ScalarProperty Name="Hinh_Thuc_Cong_No" ColumnName="Hinh_Thuc_Cong_No" />
+          <ScalarProperty Name="Loai_Chung_Tu" ColumnName="Loai_Chung_Tu" />
+          <ScalarProperty Name="Chung_Tu_Ban_Hang" ColumnName="Chung_Tu_Ban_Hang" />
+          <ScalarProperty Name="Ly_Do" ColumnName="Ly_Do" />
+          <ScalarProperty Name="So_Tien" ColumnName="So_Tien" />
+          <ScalarProperty Name="Dia_Chi" ColumnName="Dia_Chi" />
+          <ScalarProperty Name="Ten_Khach_Hang" ColumnName="Ten_Khach_Hang" />
+          <ScalarProperty Name="Ma_Khach_Hang" ColumnName="Ma_Khach_Hang" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="Ma_Chung_Tu" ColumnName="Ma_Chung_Tu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_CHUNG_TU_CHI_TIET_CHUNG_TU" TypeName="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_CHUNG_TU" StoreEntitySet="CHUNG_TU_CHI_TIET">
+      <EndProperty Name="CHUNG_TU_CHI_TIET">
+        <ScalarProperty Name="Ma_Chi_Tiet" ColumnName="Ma_Chi_Tiet" />
+      </EndProperty>
+      <EndProperty Name="CHUNG_TU">
+        <ScalarProperty Name="Ma_Chung_Tu" ColumnName="Ma_Chung_Tu" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CHUNG_TU_KHACH_HANG" TypeName="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_KHACH_HANG" StoreEntitySet="CHUNG_TU">
+      <EndProperty Name="CHUNG_TU">
+        <ScalarProperty Name="Ma_Chung_Tu" ColumnName="Ma_Chung_Tu" />
+      </EndProperty>
+      <EndProperty Name="KHACH_HANG">
+        <ScalarProperty Name="Ma_Khach_Hang" ColumnName="Ma_Khach_Hang" />
+      </EndProperty>
+      <Condition ColumnName="Ma_Khach_Hang" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CHUNG_TU_CHI_TIET_HANG_HOA" TypeName="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_HANG_HOA" StoreEntitySet="CHUNG_TU_CHI_TIET">
+      <EndProperty Name="CHUNG_TU_CHI_TIET">
+        <ScalarProperty Name="Ma_Chi_Tiet" ColumnName="Ma_Chi_Tiet" />
+      </EndProperty>
+      <EndProperty Name="HANG_HOA">
+        <ScalarProperty Name="Ma_Hang" ColumnName="Ma_Hang_Hoa" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_CHUNG_TU_CHI_TIET_KHO_HANG" TypeName="Quan_Ly_Vat_TuModel.FK_CHUNG_TU_CHI_TIET_KHO_HANG" StoreEntitySet="CHUNG_TU_CHI_TIET">
+      <EndProperty Name="CHUNG_TU_CHI_TIET">
+        <ScalarProperty Name="Ma_Chi_Tiet" ColumnName="Ma_Chi_Tiet" />
+      </EndProperty>
+      <EndProperty Name="KHO_HANG">
+        <ScalarProperty Name="Ma_Kho" ColumnName="Ma_Kho_Hang" />
+      </EndProperty>
+      <Condition ColumnName="Ma_Kho_Hang" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_HANG_HOA_NHOM_HANG" TypeName="Quan_Ly_Vat_TuModel.FK_HANG_HOA_NHOM_HANG" StoreEntitySet="HANG_HOA">
+      <EndProperty Name="HANG_HOA">
+        <ScalarProperty Name="Ma_Hang" ColumnName="Ma_Hang" />
+      </EndProperty>
+      <EndProperty Name="NHOM_HANG">
+        <ScalarProperty Name="Ma_Nhom_Hang" ColumnName="Nhom_Hang" />
+      </EndProperty>
+      <Condition ColumnName="Nhom_Hang" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_KHACH_HANG_KHU_VUC" TypeName="Quan_Ly_Vat_TuModel.FK_KHACH_HANG_KHU_VUC" StoreEntitySet="KHACH_HANG">
+      <EndProperty Name="KHACH_HANG">
+        <ScalarProperty Name="Ma_Khach_Hang" ColumnName="Ma_Khach_Hang" />
+      </EndProperty>
+      <EndProperty Name="KHU_VUC">
+        <ScalarProperty Name="Ma_Khu_Vuc" ColumnName="Ma_Khu_Vuc" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

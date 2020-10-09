@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Quan_Ly_Vat_TuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CHUNG_TU">
+    <Key>
+      <PropertyRef Name="Ma_Chung_Tu" />
+    </Key>
+    <Property Name="Ma_Chung_Tu" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Ngay" Type="datetime" />
+    <Property Name="Ma_Hoa_Don" Type="nvarchar" MaxLength="200" />
+    <Property Name="Nhan_Vien" Type="varchar" MaxLength="250" />
+    <Property Name="Loai_Chung_Tu" Type="int" />
+    <Property Name="Ma_Khach_Hang" Type="varchar" MaxLength="200" />
+    <Property Name="Dia_Chi" Type="nvarchar" MaxLength="250" />
+    <Property Name="Ly_Do" Type="nvarchar" MaxLength="255" />
+    <Property Name="VAT_Phan_Tram" Type="money" />
+    <Property Name="VAT_Thanh_Tien" Type="money" />
+    <Property Name="Chiet_Khau_Phan_Tram" Type="money" />
+    <Property Name="Chiet_Khau_Thanh_Tien" Type="money" />
+    <Property Name="Thanh_Tien" Type="money" />
+    <Property Name="Hinh_Thuc_Thu_Chi" Type="int" />
+    <Property Name="Hinh_Thuc_Cong_No" Type="int" />
+    <Property Name="Thanh_Toan" Type="money" />
+    <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="255" />
+    <Property Name="So_Thu_Tu" Type="bigint" />
+  </EntityType>
+  <EntityType Name="CHUNG_TU_CHI_TIET">
+    <Key>
+      <PropertyRef Name="Ma_Chi_Tiet" />
+    </Key>
+    <Property Name="Ma_Chi_Tiet" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Ma_Chung_Tu" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Ma_Hang_Hoa" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Loai_Chung_Tu" Type="int" />
+    <Property Name="Tinh_Trang" Type="bit" />
+    <Property Name="Ma_Kho_Hang" Type="varchar" MaxLength="200" />
+    <Property Name="So_Luong" Type="money" />
+    <Property Name="Don_Gia" Type="money" />
+    <Property Name="Thanh_Tien" Type="money" />
+    <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="255" />
+    <Property Name="So_Thu_Tu" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUA_HANG">
+    <Key>
+      <PropertyRef Name="Ma_Cua_Hang" />
+    </Key>
+    <Property Name="Ma_Cua_Hang" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Ten_Cua_Hang" Type="nvarchar" MaxLength="250" />
+    <Property Name="Dia_Chi" Type="nvarchar" MaxLength="250" />
+    <Property Name="Ma_So_Thue" Type="varchar" MaxLength="250" />
+    <Property Name="Dien_Thoai" Type="varchar" MaxLength="250" />
+    <Property Name="Email" Type="varchar" MaxLength="250" />
+    <Property Name="Fax" Type="varchar" MaxLength="250" />
+    <Property Name="Di_Dong" Type="varchar" MaxLength="250" />
+    <Property Name="Quan_Ly" Type="nvarchar" MaxLength="250" />
+    <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="250" />
+    <Property Name="Anh" Type="image" />
+  </EntityType>
+  <EntityType Name="HANG_HOA">
+    <Key>
+      <PropertyRef Name="Ma_Hang" />
+    </Key>
+    <Property Name="Ma_Hang" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Ten_Hang" Type="nvarchar" MaxLength="255" />
+    <Property Name="Nhom_Hang" Type="varchar" MaxLength="200" />
+    <Property Name="Don_Vi" Type="nvarchar" MaxLength="20" />
+    <Property Name="Gia_Nhap" Type="money" />
+    <Property Name="Gia_Xuat" Type="money" />
+    <Property Name="Anh" Type="image" />
+    <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="KHACH_HANG">
+    <Key>
+      <PropertyRef Name="Ma_Khach_Hang" />
+    </Key>
+    <Property Name="Ma_Khach_Hang" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Ten_Khach_Hang" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Ma_Khu_Vuc" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Dia_Chi" Type="nvarchar" MaxLength="255" />
+    <Property Name="Ma_So_Thue" Type="varchar" MaxLength="20" />
+    <Property Name="Dien_Thoai" Type="varchar" MaxLength="20" />
+    <Property Name="Fax" Type="varchar" MaxLength="20" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Di_Dong" Type="varchar" MaxLength="20" />
+    <Property Name="Website" Type="varchar" MaxLength="100" />
+    <Property Name="Nguoi_Lien_He" Type="nvarchar" MaxLength="100" />
+    <Property Name="NickYM" Type="nvarchar" MaxLength="20" />
+    <Property Name="NickSky" Type="nvarchar" MaxLength="20" />
+    <Property Name="Tai_Khoan_Ngan_Hang" Type="varchar" MaxLength="20" />
+    <Property Name="Ten_Ngan_Hang" Type="nvarchar" MaxLength="100" />
+    <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="KHO_HANG">
+    <Key>
+      <PropertyRef Name="Ma_Kho" />
+    </Key>
+    <Property Name="Ma_Kho" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Ten_Kho" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dia_Chi" Type="nvarchar" MaxLength="255" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dien_Thoai" Type="varchar" MaxLength="20" />
+    <Property Name="Fax" Type="varchar" MaxLength="20" />
+    <Property Name="Di_Dong" Type="varchar" MaxLength="20" />
+    <Property Name="Thu_Kho" Type="nvarchar" MaxLength="255" />
+    <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="KHU_VUC">
+    <Key>
+      <PropertyRef Name="Ma_Khu_Vuc" />
+    </Key>
+    <Property Name="Ma_Khu_Vuc" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Ten_Khu_Vuc" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="NHAN_VIEN">
+    <Key>
+      <PropertyRef Name="Ma_Nhan_Vien" />
+    </Key>
+    <Property Name="Ma_Nhan_Vien" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Ho_Ten" Type="nvarchar" MaxLength="250" />
+    <Property Name="Dia_Chi" Type="nvarchar" MaxLength="250" />
+    <Property Name="Nam_Sinh" Type="varchar" MaxLength="50" />
+    <Property Name="Dien_Thoai" Type="varchar" MaxLength="250" />
+    <Property Name="Ngay_Vao_Lam" Type="nvarchar" MaxLength="250" />
+    <Property Name="Chuc_Vu" Type="nvarchar" MaxLength="250" />
+    <Property Name="Bo_Phan" Type="nvarchar" MaxLength="250" />
+    <Property Name="Cua_Hang" Type="varchar" MaxLength="250" />
+    <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="NHOM_HANG">
+    <Key>
+      <PropertyRef Name="Ma_Nhom_Hang" />
+    </Key>
+    <Property Name="Ma_Nhom_Hang" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Ten_Nhom_Hang" Type="nvarchar" MaxLength="255" />
+    <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="THU_CHI">
+    <Key>
+      <PropertyRef Name="Ma_Chung_Tu" />
+    </Key>
+    <Property Name="Ma_Chung_Tu" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Ngay" Type="datetime" />
+    <Property Name="Ma_Khach_Hang" Type="varchar" MaxLength="250" />
+    <Property Name="Ten_Khach_Hang" Type="nvarchar" MaxLength="250" />
+    <Property Name="Dia_Chi" Type="nvarchar" MaxLength="250" />
+    <Property Name="So_Tien" Type="money" />
+    <Property Name="Ly_Do" Type="nvarchar" MaxLength="250" />
+    <Property Name="Chung_Tu_Ban_Hang" Type="varchar" MaxLength="250" />
+    <Property Name="Loai_Chung_Tu" Type="int" />
+    <Property Name="Hinh_Thuc_Cong_No" Type="int" />
+    <Property Name="Hinh_Thuc_Thanh_Toan" Type="int" />
+    <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <Association Name="FK_CHUNG_TU_CHI_TIET_CHUNG_TU">
+    <End Role="CHUNG_TU" Type="Self.CHUNG_TU" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CHUNG_TU_CHI_TIET" Type="Self.CHUNG_TU_CHI_TIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUNG_TU">
+        <PropertyRef Name="Ma_Chung_Tu" />
+      </Principal>
+      <Dependent Role="CHUNG_TU_CHI_TIET">
+        <PropertyRef Name="Ma_Chung_Tu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHUNG_TU_CHI_TIET_HANG_HOA">
+    <End Role="HANG_HOA" Type="Self.HANG_HOA" Multiplicity="1" />
+    <End Role="CHUNG_TU_CHI_TIET" Type="Self.CHUNG_TU_CHI_TIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HANG_HOA">
+        <PropertyRef Name="Ma_Hang" />
+      </Principal>
+      <Dependent Role="CHUNG_TU_CHI_TIET">
+        <PropertyRef Name="Ma_Hang_Hoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHUNG_TU_CHI_TIET_KHO_HANG">
+    <End Role="KHO_HANG" Type="Self.KHO_HANG" Multiplicity="0..1" />
+    <End Role="CHUNG_TU_CHI_TIET" Type="Self.CHUNG_TU_CHI_TIET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHO_HANG">
+        <PropertyRef Name="Ma_Kho" />
+      </Principal>
+      <Dependent Role="CHUNG_TU_CHI_TIET">
+        <PropertyRef Name="Ma_Kho_Hang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CHUNG_TU_KHACH_HANG">
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="0..1" />
+    <End Role="CHUNG_TU" Type="Self.CHUNG_TU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACH_HANG">
+        <PropertyRef Name="Ma_Khach_Hang" />
+      </Principal>
+      <Dependent Role="CHUNG_TU">
+        <PropertyRef Name="Ma_Khach_Hang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HANG_HOA_NHOM_HANG">
+    <End Role="NHOM_HANG" Type="Self.NHOM_HANG" Multiplicity="0..1" />
+    <End Role="HANG_HOA" Type="Self.HANG_HOA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHOM_HANG">
+        <PropertyRef Name="Ma_Nhom_Hang" />
+      </Principal>
+      <Dependent Role="HANG_HOA">
+        <PropertyRef Name="Nhom_Hang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHACH_HANG_KHU_VUC">
+    <End Role="KHU_VUC" Type="Self.KHU_VUC" Multiplicity="1" />
+    <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHU_VUC">
+        <PropertyRef Name="Ma_Khu_Vuc" />
+      </Principal>
+      <Dependent Role="KHACH_HANG">
+        <PropertyRef Name="Ma_Khu_Vuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Quan_Ly_Vat_TuModelStoreContainer">
+    <EntitySet Name="CHUNG_TU" EntityType="Self.CHUNG_TU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CHUNG_TU_CHI_TIET" EntityType="Self.CHUNG_TU_CHI_TIET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUA_HANG" EntityType="Self.CUA_HANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HANG_HOA" EntityType="Self.HANG_HOA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHO_HANG" EntityType="Self.KHO_HANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHU_VUC" EntityType="Self.KHU_VUC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHOM_HANG" EntityType="Self.NHOM_HANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THU_CHI" EntityType="Self.THU_CHI" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CHUNG_TU_CHI_TIET_CHUNG_TU" Association="Self.FK_CHUNG_TU_CHI_TIET_CHUNG_TU">
+      <End Role="CHUNG_TU" EntitySet="CHUNG_TU" />
+      <End Role="CHUNG_TU_CHI_TIET" EntitySet="CHUNG_TU_CHI_TIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUNG_TU_CHI_TIET_HANG_HOA" Association="Self.FK_CHUNG_TU_CHI_TIET_HANG_HOA">
+      <End Role="HANG_HOA" EntitySet="HANG_HOA" />
+      <End Role="CHUNG_TU_CHI_TIET" EntitySet="CHUNG_TU_CHI_TIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUNG_TU_CHI_TIET_KHO_HANG" Association="Self.FK_CHUNG_TU_CHI_TIET_KHO_HANG">
+      <End Role="KHO_HANG" EntitySet="KHO_HANG" />
+      <End Role="CHUNG_TU_CHI_TIET" EntitySet="CHUNG_TU_CHI_TIET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CHUNG_TU_KHACH_HANG" Association="Self.FK_CHUNG_TU_KHACH_HANG">
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+      <End Role="CHUNG_TU" EntitySet="CHUNG_TU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HANG_HOA_NHOM_HANG" Association="Self.FK_HANG_HOA_NHOM_HANG">
+      <End Role="NHOM_HANG" EntitySet="NHOM_HANG" />
+      <End Role="HANG_HOA" EntitySet="HANG_HOA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHACH_HANG_KHU_VUC" Association="Self.FK_KHACH_HANG_KHU_VUC">
+      <End Role="KHU_VUC" EntitySet="KHU_VUC" />
+      <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

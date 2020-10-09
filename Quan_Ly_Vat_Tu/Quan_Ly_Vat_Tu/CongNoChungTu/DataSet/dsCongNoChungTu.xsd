@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCongNoChungTu" targetNamespace="http://tempuri.org/dsCongNoChungTu.xsd" xmlns:mstns="http://tempuri.org/dsCongNoChungTu.xsd" xmlns="http://tempuri.org/dsCongNoChungTu.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Quan_Ly_Vat_TuConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Quan_Ly_Vat_TuConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Quan_Ly_Vat_Tu.Properties.Settings.GlobalReference.Default.Quan_Ly_Vat_TuConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Cong_No_Chung_TuTableAdapter" GeneratorDataComponentClassName="Cong_No_Chung_TuTableAdapter" Name="Cong_No_Chung_Tu" UserDataComponentName="Cong_No_Chung_TuTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Quan_Ly_Vat_TuConnectionString (Settings)" DbObjectName="SELECT ct.Ma_Khach_Hang, kh.Ten_Khach_Hang, ct.Dia_Chi, ct.Ma_Chung_Tu, ct.Ma_Hoa_Don, ct.Ngay, ct.Hinh_Thuc_Cong_No, ct.Loai_Chung_Tu, ct.Ly_Do, ct.Nhan_Vien, nv.Ho_Ten, ct.Thanh_Tien, ct.Thanh_Toan, CASE WHEN ct.Hinh_Thuc_Cong_No = 1 THEN (ct.Thanh_Tien - ct.Thanh_Toan) WHEN ct.Hinh_Thuc_Cong_No = 2 THEN ((ct.Thanh_Tien - ct.Thanh_Toan) * -1) END AS Cong_No, ct.Ghi_Chu, CASE WHEN ct.Hinh_Thuc_Cong_No = 1 THEN ct.Thanh_Tien WHEN ct.Loai_Chung_Tu = 1 AND ct.Thanh_Toan != 0 THEN ct.Thanh_Toan END AS Tang_Cong_No, CASE WHEN ct.Hinh_Thuc_Cong_No = 2 THEN ct.Thanh_Tien WHEN ct.Loai_Chung_Tu = 2 AND ct.Thanh_Toan != 0 THEN ct.Thanh_Toan END AS Giam_Cong_No, ( SELECT SUM(tc.So_Tien) FROM THU_CHI tc WHERE tc.Chung_Tu_Ban_Hang = ct.Ma_Chung_Tu AND tc.Loai_Chung_Tu = 3 AND tc.Hinh_Thuc_Cong_No = 2 ) AS Thu_Giam_Cong_No, ( SELECT SUM(tc.So_Tien) FROM THU_CHI tc WHERE tc.Chung_Tu_Ban_Hang = ct.Ma_Chung_Tu AND tc.Loai_Chung_Tu = 3 AND tc.Hinh_Thuc_Cong_No = 1 ) AS Thu_Tang_Cong_No, ( SELECT SUM(tc.So_Tien) FROM THU_CHI tc WHERE tc.Chung_Tu_Ban_Hang = ct.Ma_Chung_Tu AND tc.Loai_Chung_Tu = 4 AND tc.Hinh_Thuc_Cong_No = 2 ) AS Chi_Giam_Cong_No, ( SELECT SUM(tc.So_Tien) FROM THU_CHI tc WHERE tc.Chung_Tu_Ban_Hang = ct.Ma_Chung_Tu AND tc.Loai_Chung_Tu = 4 AND tc.Hinh_Thuc_Cong_No = 1 ) AS Chi_Tang_Cong_No, ( SELECT SUM( CASE WHEN tc.Hinh_Thuc_Cong_No = 1 THEN tc.So_Tien WHEN tc.Hinh_Thuc_Cong_No = 2 THEN (tc.So_Tien * -1) ELSE 0 END ) FROM THU_CHI tc WHERE tc.Chung_Tu_Ban_Hang = ct.Ma_Chung_Tu ) AS Cong_No_Thu_Chi FROM CHUNG_TU ct LEFT OUTER JOIN KHACH_HANG kh ON kh.Ma_Khach_Hang = ct.Ma_Khach_Hang LEFT OUTER JOIN NHAN_VIEN nv ON nv.Ma_Nhan_Vien = ct.Nhan_Vien WHERE ct.Hinh_Thuc_Cong_No != 0 AND ct.Hinh_Thuc_Thu_Chi != 0" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>--DECLARE @TatCa BIT
+--SET @TatCa = 0
+
+SELECT *,
+       (
+           Cong_No_Chung_Tu.Cong_No + ISNULL(Cong_No_Chung_Tu.Cong_No_Thu_Chi, 0)
+       ) AS Cong_No_Con_Lai,
+       (
+           Cong_No_Chung_Tu.Thu_Giam_Cong_No + Cong_No_Chung_Tu.Thu_Tang_Cong_No
+       ) AS Tong_Thu,
+       (
+           Cong_No_Chung_Tu.Chi_Giam_Cong_No + Cong_No_Chung_Tu.Chi_Tang_Cong_No
+       ) AS Tong_Chi
+FROM   (
+           SELECT ct.Ma_Khach_Hang,
+                  kh.Ten_Khach_Hang,
+                  ct.Dia_Chi,
+                  ct.Ma_Chung_Tu,
+                  ct.Ma_Hoa_Don,
+                  ct.Ngay,
+                  ct.Hinh_Thuc_Cong_No,
+                  ct.Loai_Chung_Tu,
+                  ct.Ly_Do,
+                  ct.Nhan_Vien,
+                  nv.Ho_Ten,
+                  ct.Thanh_Tien,
+                  ct.Thanh_Toan,
+                  CASE 
+                       WHEN ct.Hinh_Thuc_Cong_No = 1 THEN (ct.Thanh_Tien - ct.Thanh_Toan)
+                       WHEN ct.Hinh_Thuc_Cong_No = 2 THEN ((ct.Thanh_Tien - ct.Thanh_Toan) * -1)
+                  END AS Cong_No,
+                  ct.Ghi_Chu,
+                  CASE 
+                       WHEN ct.Hinh_Thuc_Cong_No = 1 THEN ct.Thanh_Tien
+                       WHEN ct.Loai_Chung_Tu = 1
+           AND ct.Thanh_Toan != 0 THEN ct.Thanh_Toan
+               END AS Tang_Cong_No,
+           CASE 
+                WHEN ct.Hinh_Thuc_Cong_No = 2 THEN ct.Thanh_Tien
+                WHEN ct.Loai_Chung_Tu = 2
+           AND ct.Thanh_Toan != 0 THEN ct.Thanh_Toan
+               END AS Giam_Cong_No,
+           (
+               SELECT SUM(tc.So_Tien)
+               FROM   THU_CHI tc
+               WHERE  tc.Chung_Tu_Ban_Hang = ct.Ma_Chung_Tu
+                      AND tc.Loai_Chung_Tu = 3
+                      AND tc.Hinh_Thuc_Cong_No = 2
+           ) AS Thu_Giam_Cong_No,
+           (
+               SELECT SUM(tc.So_Tien)
+               FROM   THU_CHI tc
+               WHERE  tc.Chung_Tu_Ban_Hang = ct.Ma_Chung_Tu
+                      AND tc.Loai_Chung_Tu = 3
+                      AND tc.Hinh_Thuc_Cong_No = 1
+           ) AS Thu_Tang_Cong_No,
+           (
+               SELECT SUM(tc.So_Tien)
+               FROM   THU_CHI tc
+               WHERE  tc.Chung_Tu_Ban_Hang = ct.Ma_Chung_Tu
+                      AND tc.Loai_Chung_Tu = 4
+                      AND tc.Hinh_Thuc_Cong_No = 2
+           ) AS Chi_Giam_Cong_No,
+           (
+               SELECT SUM(tc.So_Tien)
+               FROM   THU_CHI tc
+               WHERE  tc.Chung_Tu_Ban_Hang = ct.Ma_Chung_Tu
+                      AND tc.Loai_Chung_Tu = 4
+                      AND tc.Hinh_Thuc_Cong_No = 1
+           ) AS Chi_Tang_Cong_No,
+           (
+               SELECT SUM(
+                          CASE 
+                               WHEN tc.Hinh_Thuc_Cong_No = 1 THEN tc.So_Tien
+                               WHEN tc.Hinh_Thuc_Cong_No = 2 THEN (tc.So_Tien * -1)
+                               ELSE 0
+                          END
+                      )
+               FROM   THU_CHI tc
+               WHERE  tc.Chung_Tu_Ban_Hang = ct.Ma_Chung_Tu
+           ) AS Cong_No_Thu_Chi
+           FROM CHUNG_TU ct LEFT OUTER JOIN KHACH_HANG kh ON kh.Ma_Khach_Hang =
+           ct.Ma_Khach_Hang
+           LEFT OUTER JOIN NHAN_VIEN nv ON nv.Ma_Nhan_Vien = ct.Nhan_Vien
+           WHERE ct.Hinh_Thuc_Cong_No != 0
+           AND ct.Hinh_Thuc_Thu_Chi != 0
+       )Cong_No_Chung_Tu
+WHERE  (
+           Cong_No_Chung_Tu.Cong_No + ISNULL(Cong_No_Chung_Tu.Cong_No_Thu_Chi, 0)
+       ) != 0
+       OR  @TatCa = 1</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="TatCa" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Boolean" Direction="Input" ParameterName="@TatCa" Precision="0" ProviderType="Bit" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Ma_Khach_Hang" DataSetColumn="Ma_Khach_Hang" />
+              <Mapping SourceColumn="Ma_Chung_Tu" DataSetColumn="Ma_Chung_Tu" />
+              <Mapping SourceColumn="Ngay" DataSetColumn="Ngay" />
+              <Mapping SourceColumn="Hinh_Thuc_Cong_No" DataSetColumn="Hinh_Thuc_Cong_No" />
+              <Mapping SourceColumn="Loai_Chung_Tu" DataSetColumn="Loai_Chung_Tu" />
+              <Mapping SourceColumn="Thanh_Tien" DataSetColumn="Thanh_Tien" />
+              <Mapping SourceColumn="Thanh_Toan" DataSetColumn="Thanh_Toan" />
+              <Mapping SourceColumn="Cong_No" DataSetColumn="Cong_No" />
+              <Mapping SourceColumn="Ghi_Chu" DataSetColumn="Ghi_Chu" />
+              <Mapping SourceColumn="Tang_Cong_No" DataSetColumn="Tang_Cong_No" />
+              <Mapping SourceColumn="Giam_Cong_No" DataSetColumn="Giam_Cong_No" />
+              <Mapping SourceColumn="Thu_Giam_Cong_No" DataSetColumn="Thu_Giam_Cong_No" />
+              <Mapping SourceColumn="Thu_Tang_Cong_No" DataSetColumn="Thu_Tang_Cong_No" />
+              <Mapping SourceColumn="Chi_Giam_Cong_No" DataSetColumn="Chi_Giam_Cong_No" />
+              <Mapping SourceColumn="Chi_Tang_Cong_No" DataSetColumn="Chi_Tang_Cong_No" />
+              <Mapping SourceColumn="Cong_No_Thu_Chi" DataSetColumn="Cong_No_Thu_Chi" />
+              <Mapping SourceColumn="Cong_No_Con_Lai" DataSetColumn="Cong_No_Con_Lai" />
+              <Mapping SourceColumn="Tong_Thu" DataSetColumn="Tong_Thu" />
+              <Mapping SourceColumn="Tong_Chi" DataSetColumn="Tong_Chi" />
+              <Mapping SourceColumn="Ten_Khach_Hang" DataSetColumn="Ten_Khach_Hang" />
+              <Mapping SourceColumn="Dia_Chi" DataSetColumn="Dia_Chi" />
+              <Mapping SourceColumn="Ly_Do" DataSetColumn="Ly_Do" />
+              <Mapping SourceColumn="Nhan_Vien" DataSetColumn="Nhan_Vien" />
+              <Mapping SourceColumn="Ho_Ten" DataSetColumn="Ho_Ten" />
+              <Mapping SourceColumn="Ma_Hoa_Don" DataSetColumn="Ma_Hoa_Don" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCongNoChungTu" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCongNoChungTu" msprop:Generator_UserDSName="dsCongNoChungTu">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Cong_No_Chung_Tu" msprop:Generator_TableClassName="Cong_No_Chung_TuDataTable" msprop:Generator_TableVarName="tableCong_No_Chung_Tu" msprop:Generator_TablePropName="Cong_No_Chung_Tu" msprop:Generator_RowDeletingName="Cong_No_Chung_TuRowDeleting" msprop:Generator_RowChangingName="Cong_No_Chung_TuRowChanging" msprop:Generator_RowEvHandlerName="Cong_No_Chung_TuRowChangeEventHandler" msprop:Generator_RowDeletedName="Cong_No_Chung_TuRowDeleted" msprop:Generator_UserTableName="Cong_No_Chung_Tu" msprop:Generator_RowChangedName="Cong_No_Chung_TuRowChanged" msprop:Generator_RowEvArgName="Cong_No_Chung_TuRowChangeEvent" msprop:Generator_RowClassName="Cong_No_Chung_TuRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ma_Khach_Hang" msprop:Generator_ColumnVarNameInTable="columnMa_Khach_Hang" msprop:Generator_ColumnPropNameInRow="Ma_Khach_Hang" msprop:Generator_ColumnPropNameInTable="Ma_Khach_HangColumn" msprop:Generator_UserColumnName="Ma_Khach_Hang" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ma_Chung_Tu" msprop:Generator_ColumnVarNameInTable="columnMa_Chung_Tu" msprop:Generator_ColumnPropNameInRow="Ma_Chung_Tu" msprop:Generator_ColumnPropNameInTable="Ma_Chung_TuColumn" msprop:Generator_UserColumnName="Ma_Chung_Tu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ngay" msprop:Generator_ColumnVarNameInTable="columnNgay" msprop:Generator_ColumnPropNameInRow="Ngay" msprop:Generator_ColumnPropNameInTable="NgayColumn" msprop:Generator_UserColumnName="Ngay" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Hinh_Thuc_Cong_No" msprop:Generator_ColumnVarNameInTable="columnHinh_Thuc_Cong_No" msprop:Generator_ColumnPropNameInRow="Hinh_Thuc_Cong_No" msprop:Generator_ColumnPropNameInTable="Hinh_Thuc_Cong_NoColumn" msprop:Generator_UserColumnName="Hinh_Thuc_Cong_No" type="xs:int" minOccurs="0" />
+              <xs:element name="Loai_Chung_Tu" msprop:Generator_ColumnVarNameInTable="columnLoai_Chung_Tu" msprop:Generator_ColumnPropNameInRow="Loai_Chung_Tu" msprop:Generator_ColumnPropNameInTable="Loai_Chung_TuColumn" msprop:Generator_UserColumnName="Loai_Chung_Tu" type="xs:int" minOccurs="0" />
+              <xs:element name="Thanh_Tien" msprop:Generator_ColumnVarNameInTable="columnThanh_Tien" msprop:Generator_ColumnPropNameInRow="Thanh_Tien" msprop:Generator_ColumnPropNameInTable="Thanh_TienColumn" msprop:Generator_UserColumnName="Thanh_Tien" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Thanh_Toan" msprop:Generator_ColumnVarNameInTable="columnThanh_Toan" msprop:Generator_ColumnPropNameInRow="Thanh_Toan" msprop:Generator_ColumnPropNameInTable="Thanh_ToanColumn" msprop:Generator_UserColumnName="Thanh_Toan" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cong_No" msprop:Generator_ColumnVarNameInTable="columnCong_No" msprop:Generator_ColumnPropNameInRow="Cong_No" msprop:Generator_ColumnPropNameInTable="Cong_NoColumn" msprop:Generator_UserColumnName="Cong_No" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Ghi_Chu" msprop:Generator_ColumnVarNameInTable="columnGhi_Chu" msprop:Generator_ColumnPropNameInRow="Ghi_Chu" msprop:Generator_ColumnPropNameInTable="Ghi_ChuColumn" msprop:Generator_UserColumnName="Ghi_Chu" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tang_Cong_No" msprop:Generator_ColumnVarNameInTable="columnTang_Cong_No" msprop:Generator_ColumnPropNameInRow="Tang_Cong_No" msprop:Generator_ColumnPropNameInTable="Tang_Cong_NoColumn" msprop:Generator_UserColumnName="Tang_Cong_No" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Giam_Cong_No" msprop:Generator_ColumnVarNameInTable="columnGiam_Cong_No" msprop:Generator_ColumnPropNameInRow="Giam_Cong_No" msprop:Generator_ColumnPropNameInTable="Giam_Cong_NoColumn" msprop:Generator_UserColumnName="Giam_Cong_No" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Thu_Giam_Cong_No" msprop:Generator_ColumnVarNameInTable="columnThu_Giam_Cong_No" msprop:Generator_ColumnPropNameInRow="Thu_Giam_Cong_No" msprop:Generator_ColumnPropNameInTable="Thu_Giam_Cong_NoColumn" msprop:Generator_UserColumnName="Thu_Giam_Cong_No" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Thu_Tang_Cong_No" msprop:Generator_ColumnVarNameInTable="columnThu_Tang_Cong_No" msprop:Generator_ColumnPropNameInRow="Thu_Tang_Cong_No" msprop:Generator_ColumnPropNameInTable="Thu_Tang_Cong_NoColumn" msprop:Generator_UserColumnName="Thu_Tang_Cong_No" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Chi_Giam_Cong_No" msprop:Generator_ColumnVarNameInTable="columnChi_Giam_Cong_No" msprop:Generator_ColumnPropNameInRow="Chi_Giam_Cong_No" msprop:Generator_ColumnPropNameInTable="Chi_Giam_Cong_NoColumn" msprop:Generator_UserColumnName="Chi_Giam_Cong_No" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Chi_Tang_Cong_No" msprop:Generator_ColumnVarNameInTable="columnChi_Tang_Cong_No" msprop:Generator_ColumnPropNameInRow="Chi_Tang_Cong_No" msprop:Generator_ColumnPropNameInTable="Chi_Tang_Cong_NoColumn" msprop:Generator_UserColumnName="Chi_Tang_Cong_No" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cong_No_Thu_Chi" msprop:Generator_ColumnVarNameInTable="columnCong_No_Thu_Chi" msprop:Generator_ColumnPropNameInRow="Cong_No_Thu_Chi" msprop:Generator_ColumnPropNameInTable="Cong_No_Thu_ChiColumn" msprop:Generator_UserColumnName="Cong_No_Thu_Chi" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cong_No_Con_Lai" msprop:Generator_ColumnVarNameInTable="columnCong_No_Con_Lai" msprop:Generator_ColumnPropNameInRow="Cong_No_Con_Lai" msprop:Generator_ColumnPropNameInTable="Cong_No_Con_LaiColumn" msprop:Generator_UserColumnName="Cong_No_Con_Lai" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Tong_Thu" msprop:Generator_ColumnVarNameInTable="columnTong_Thu" msprop:Generator_ColumnPropNameInRow="Tong_Thu" msprop:Generator_ColumnPropNameInTable="Tong_ThuColumn" msprop:Generator_UserColumnName="Tong_Thu" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Tong_Chi" msprop:Generator_ColumnVarNameInTable="columnTong_Chi" msprop:Generator_ColumnPropNameInRow="Tong_Chi" msprop:Generator_ColumnPropNameInTable="Tong_ChiColumn" msprop:Generator_UserColumnName="Tong_Chi" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Ten_Khach_Hang" msprop:Generator_ColumnVarNameInTable="columnTen_Khach_Hang" msprop:Generator_ColumnPropNameInRow="Ten_Khach_Hang" msprop:Generator_ColumnPropNameInTable="Ten_Khach_HangColumn" msprop:Generator_UserColumnName="Ten_Khach_Hang" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dia_Chi" msprop:Generator_ColumnVarNameInTable="columnDia_Chi" msprop:Generator_ColumnPropNameInRow="Dia_Chi" msprop:Generator_ColumnPropNameInTable="Dia_ChiColumn" msprop:Generator_UserColumnName="Dia_Chi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ly_Do" msprop:Generator_ColumnVarNameInTable="columnLy_Do" msprop:Generator_ColumnPropNameInRow="Ly_Do" msprop:Generator_ColumnPropNameInTable="Ly_DoColumn" msprop:Generator_UserColumnName="Ly_Do" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nhan_Vien" msprop:Generator_ColumnVarNameInTable="columnNhan_Vien" msprop:Generator_ColumnPropNameInRow="Nhan_Vien" msprop:Generator_ColumnPropNameInTable="Nhan_VienColumn" msprop:Generator_UserColumnName="Nhan_Vien" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ho_Ten" msprop:Generator_ColumnVarNameInTable="columnHo_Ten" msprop:Generator_ColumnPropNameInRow="Ho_Ten" msprop:Generator_ColumnPropNameInTable="Ho_TenColumn" msprop:Generator_UserColumnName="Ho_Ten" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ma_Hoa_Don" msprop:Generator_ColumnVarNameInTable="columnMa_Hoa_Don" msprop:Generator_ColumnPropNameInRow="Ma_Hoa_Don" msprop:Generator_ColumnPropNameInTable="Ma_Hoa_DonColumn" msprop:Generator_UserColumnName="Ma_Hoa_Don" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Cong_No_Chung_Tu" />
+      <xs:field xpath="mstns:Ma_Chung_Tu" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

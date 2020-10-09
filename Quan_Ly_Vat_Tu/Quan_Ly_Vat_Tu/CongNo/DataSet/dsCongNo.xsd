@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCongNo" targetNamespace="http://tempuri.org/dsCongNo.xsd" xmlns:mstns="http://tempuri.org/dsCongNo.xsd" xmlns="http://tempuri.org/dsCongNo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Quan_Ly_Vat_TuConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Quan_Ly_Vat_TuConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Quan_Ly_Vat_Tu.Properties.Settings.GlobalReference.Default.Quan_Ly_Vat_TuConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCongNo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsCongNo" msprop:Generator_UserDSName="dsCongNo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Cong_No_Theo_Ngay" msprop:Generator_TableClassName="Cong_No_Theo_NgayDataTable" msprop:Generator_TableVarName="tableCong_No_Theo_Ngay" msprop:Generator_TablePropName="Cong_No_Theo_Ngay" msprop:Generator_RowDeletingName="Cong_No_Theo_NgayRowDeleting" msprop:Generator_RowChangingName="Cong_No_Theo_NgayRowChanging" msprop:Generator_RowEvHandlerName="Cong_No_Theo_NgayRowChangeEventHandler" msprop:Generator_RowDeletedName="Cong_No_Theo_NgayRowDeleted" msprop:Generator_UserTableName="Cong_No_Theo_Ngay" msprop:Generator_RowChangedName="Cong_No_Theo_NgayRowChanged" msprop:Generator_RowEvArgName="Cong_No_Theo_NgayRowChangeEvent" msprop:Generator_RowClassName="Cong_No_Theo_NgayRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ma_Khach_Hang" msprop:Generator_ColumnVarNameInTable="columnMa_Khach_Hang" msprop:Generator_ColumnPropNameInRow="Ma_Khach_Hang" msprop:Generator_ColumnPropNameInTable="Ma_Khach_HangColumn" msprop:Generator_UserColumnName="Ma_Khach_Hang" type="xs:string" minOccurs="0" />
+              <xs:element name="Ten_Khach_Hang" msprop:Generator_ColumnVarNameInTable="columnTen_Khach_Hang" msprop:Generator_ColumnPropNameInRow="Ten_Khach_Hang" msprop:Generator_ColumnPropNameInTable="Ten_Khach_HangColumn" msprop:Generator_UserColumnName="Ten_Khach_Hang" type="xs:string" minOccurs="0" />
+              <xs:element name="Dia_Chi" msprop:Generator_ColumnVarNameInTable="columnDia_Chi" msprop:Generator_ColumnPropNameInRow="Dia_Chi" msprop:Generator_ColumnPropNameInTable="Dia_ChiColumn" msprop:Generator_UserColumnName="Dia_Chi" type="xs:string" minOccurs="0" />
+              <xs:element name="Ma_Khu_Vuc" msprop:Generator_ColumnVarNameInTable="columnMa_Khu_Vuc" msprop:Generator_ColumnPropNameInRow="Ma_Khu_Vuc" msprop:Generator_ColumnPropNameInTable="Ma_Khu_VucColumn" msprop:Generator_UserColumnName="Ma_Khu_Vuc" type="xs:string" minOccurs="0" />
+              <xs:element name="Ten_Khu_Vuc" msprop:Generator_ColumnVarNameInTable="columnTen_Khu_Vuc" msprop:Generator_ColumnPropNameInRow="Ten_Khu_Vuc" msprop:Generator_ColumnPropNameInTable="Ten_Khu_VucColumn" msprop:Generator_UserColumnName="Ten_Khu_Vuc" type="xs:string" minOccurs="0" />
+              <xs:element name="Cong_No_Dau_Ky" msprop:Generator_ColumnVarNameInTable="columnCong_No_Dau_Ky" msprop:Generator_ColumnPropNameInRow="Cong_No_Dau_Ky" msprop:Generator_ColumnPropNameInTable="Cong_No_Dau_KyColumn" msprop:Generator_UserColumnName="Cong_No_Dau_Ky" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Tang_Trong_Ky" msprop:Generator_ColumnVarNameInTable="columnTang_Trong_Ky" msprop:Generator_ColumnPropNameInRow="Tang_Trong_Ky" msprop:Generator_ColumnPropNameInTable="Tang_Trong_KyColumn" msprop:Generator_UserColumnName="Tang_Trong_Ky" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Giam_Trong_Ky" msprop:Generator_ColumnVarNameInTable="columnGiam_Trong_Ky" msprop:Generator_ColumnPropNameInRow="Giam_Trong_Ky" msprop:Generator_ColumnPropNameInTable="Giam_Trong_KyColumn" msprop:Generator_UserColumnName="Giam_Trong_Ky" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cong_No_Cuoi_Ky" msprop:Generator_ColumnVarNameInTable="columnCong_No_Cuoi_Ky" msprop:Generator_ColumnPropNameInRow="Cong_No_Cuoi_Ky" msprop:Generator_ColumnPropNameInTable="Cong_No_Cuoi_KyColumn" msprop:Generator_UserColumnName="Cong_No_Cuoi_Ky" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
